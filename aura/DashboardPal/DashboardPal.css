@@ -1,0 +1,94 @@
+.THIS .iframeContainer, .THIS{
+    position: relative;
+}
+
+.THIS .slds-modal{
+    z-index: 99;
+}
+
+.THIS .slds-backdrop_open{
+    z-index: 98;
+}
+
+.THIS .featureParagraph{
+    width:58%; 
+    display: inline-block;
+    padding: 1%;
+}
+
+.THIS .featureImage{
+    width:38%; 
+    display: inline-block; 
+    vertical-align: top;
+    padding: 1%;
+}
+
+.THIS .configureDashboard{
+    visibility: visible;
+    height: 50px;
+    transition: visibility 0s linear 150ms, height 300ms;
+}
+
+.THIS .collapsed{
+    visibility: hidden;
+    height: 0px;
+    transition: visibility 0s linear 50ms, height 300ms;
+}
+
+.THIS .dashboardFrame{
+    border:0;
+}
+
+.THIS .settingsIcon{
+    float: right;
+    display:inline-block;
+}
+
+.THIS .paddingTop{
+    padding-top: 1em;
+}
+
+.THIS .paddingBottom{
+    padding-bottom: 1em;
+}
+
+.THIS .boxOverrides{
+    background-color:rgb(243, 242, 242);
+    /*margin-bottom:-8px;*/
+    border:0px;
+    border-top:1px solid rgb(221, 219, 218);
+}
+
+.THIS .labels{
+    display:inline-block;
+    padding-top:8px;
+}
+
+.THIS .modalTooltip{
+    display:inline-block; 
+    vertical-align:top;
+    padding-right:5px;
+}
+
+.THIS .dashboardDropdown{
+    width:300px;
+    display:inline-block;
+}
+
+.THIS .folderDropdown{
+    width:300px;
+    display:inline-block;
+    padding-right:5px;
+}
+
+.THIS .filter{
+    display:inline-block; 
+    vertical-align:bottom;
+    padding-left:5px;
+}
+
+.THIS .spinner{
+    position: relative; 
+    padding-top: 10rem; 
+    padding-bottom: 2rem;
+}

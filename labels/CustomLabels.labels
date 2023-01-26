@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Created_by_Me</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Created_by_Me</shortDescription>
+        <value>Created by Me</value>
+    </labels>
+    <labels>
+        <fullName>Modal_Acknowledge_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Modal_Acknowledge_Button</shortDescription>
+        <value>Get Started</value>
+    </labels>
+    <labels>
+        <fullName>Modal_Feature1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Modal_Feature1</shortDescription>
+        <value>Welcome to Dashboard Pal, this utility will enable you to select which dashboard you&apos;d like to view, selections are stored against your user and as such they are persistent.</value>
+    </labels>
+    <labels>
+        <fullName>Modal_Feature2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Modal_Feature2</shortDescription>
+        <value>To get started with using Dashboard Pal, select the preference (cog) button on top right corner of this component. Upon clicking this button, the collapsible section with folder, dashboard selection and sorting will be revealed to you. &quot;Private Dashboards&quot; and &quot;Created by Me&quot; options are always present to you, once you select the relevant folder the dashboards contained within will be populated in the adjoining dropdown. After making a dashboard selection, the relevant dashboard will be displayed.</value>
+    </labels>
+    <labels>
+        <fullName>Modal_Feature3</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Modal_Feature3</shortDescription>
+        <value>In order to open records which may exist in your dashboards it is recommended that you use the middle mouse button to open these (Press mouse wheel down). Alternatively use combination of Ctrl/Cmd + Click on record which will open the relevant record in a new tab. (Note: Opening records in communities is currently not supported)</value>
+    </labels>
+    <labels>
+        <fullName>Modal_Feature4</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Modal_Feature4</shortDescription>
+        <value>If you run into any issue such as no dashboards displaying in dropdown, contact your administrator and request access to Dashboards. To re-open this window click on the information &quot;i&quot; tooltip located by the folder selection dropdown.</value>
+    </labels>
+    <labels>
+        <fullName>Modal_Heading</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Modal_Heading</shortDescription>
+        <value>Dashboard Pal Quick Start</value>
+    </labels>
+    <labels>
+        <fullName>No_Dashboards_Found</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No_Dashboards_Found</shortDescription>
+        <value>No Dashboards Found</value>
+    </labels>
+    <labels>
+        <fullName>No_Folder_Selected</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No_Folder_Selected</shortDescription>
+        <value>No Folder Selected</value>
+    </labels>
+    <labels>
+        <fullName>No_Query_Results</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No Query Results</shortDescription>
+        <value>Tip: If no dashboard is displayed within a few seconds it is possible that you do not have access to Dashboards, in that case contact your administrator and request access to this feature.</value>
+    </labels>
+    <labels>
+        <fullName>Private_Dashboards</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Private_Dashboards</shortDescription>
+        <value>Private Dashboards</value>
+    </labels>
+    <labels>
+        <fullName>Select_Dashboard_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select_Dashboard_Label</shortDescription>
+        <value>Select a preferred dashboard</value>
+    </labels>
+    <labels>
+        <fullName>Select_Dashboard_Value</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select_Dashboard_Value</shortDescription>
+        <value>Select one</value>
+    </labels>
+    <labels>
+        <fullName>Select_Folder_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select_Folder_Label</shortDescription>
+        <value>Select a Folder</value>
+    </labels>
+    <labels>
+        <fullName>Select_Folder_Value</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select_Folder_Value</shortDescription>
+        <value>Select one</value>
+    </labels>
+    <labels>
+        <fullName>Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Title</shortDescription>
+        <value>Dashboard Pal</value>
+    </labels>
+    <labels>
+        <fullName>Tooltip_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Tooltip_Text</shortDescription>
+        <value>Dashboard preference is saved for each user</value>
+    </labels>
+</CustomLabels>

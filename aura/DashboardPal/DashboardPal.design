@@ -1,0 +1,6 @@
+<design:component label="Dashboard Pal">
+    <design:attribute name="title" label="Dashboard Title" description="Sets default Title for the component, leave empty if you'd like to use custom labels instead"/>
+    <design:attribute name="height" label="Dashboard Height" description="Sets default height for the dashboard component" default="870"/>
+    <design:attribute name="foldersEnforced" label="Enforce Folder Usage" description="Enforces folder usage, dashboards are displayed based on selected folder" default="true"/>
+    <design:attribute name="showQuickStart" label="Show Quick Start" description="When enabled, the users will be shown instructions on how to interact with the component on first run" default="true"/>
+</design:component>

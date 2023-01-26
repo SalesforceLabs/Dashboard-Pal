@@ -1,0 +1,111 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" controller="DashboardPalCtrl">
+    <aura:attribute name="userId" type="String"/>
+    <aura:attribute name="dashboards" type="Dashboard"/>
+    <aura:attribute name="selectedDashboard" type="String"/>
+    <aura:attribute name="title" type="String" access="global"/>
+    <aura:attribute name="folders" type="Folder"/>
+    <aura:attribute name="selectedFolder" type="String"/>
+    <aura:attribute name="dashboardId" type="String"/>
+    <aura:attribute name="communityPrefix" type="String" default=""/>
+    <aura:attribute name="height" type="Integer" access="global" default="870"/>
+    <aura:attribute name="atoz" default="true" type="Boolean" />
+    <aura:attribute name="showModal" default="false" type="Boolean" />
+    <aura:attribute name="foldersEnforced" default="false" type="Boolean" access="global" />
+    <aura:attribute name="showQuickStart" default="false" type="Boolean" access="global" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    
+    
+    <div class="iframeContainer">
+        <aura:if isTrue="{!v.showModal}">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="{!c.closeModal}">
+                            <lightning:icon iconName="utility:close" size="small" alternativeText="Close" variant="inverse"/>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!$Label.c.Modal_Heading}</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p class="paddingBottom">{!$Label.c.Modal_Feature1}</p>
+                        <p class="featureParagraph">{!$Label.c.Modal_Feature2}</p>
+                        <img class="featureImage" src="{!$Resource.dbp_Intro1}"></img>
+                        <br/>
+                        <img class="featureImage" src="{!$Resource.dbp_Intro2}"></img>
+                        <p class="featureParagraph">{!$Label.c.Modal_Feature3}</p>
+                        <p class="paddingTop">{!$Label.c.Modal_Feature4}</p>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_brand" onclick="{!c.acknowledgeModal}" id="ackButton">{!$Label.c.Modal_Acknowledge_Button}</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>     
+        
+        <div class="slds-box boxOverrides">
+            <div>
+                <aura:if isTrue="{! !empty(v.title)}">
+                    <div class="slds-text-heading_small labels">{!v.title}</div>
+                    <aura:set attribute="else">
+                        <div class="slds-text-heading_small labels">{!$Label.c.Title}</div>
+                    </aura:set>
+                </aura:if>
+                <button class="slds-button slds-button--icon-border-filled slds-button--icon-large feedButton settingsIcon" onclick="{!c.togglePreferences}">
+                    <lightning:icon iconName="utility:settings" size="xx-small" alternativeText="Preferences"/>
+                </button>
+            </div>
+            <div class="configureDashboard collapsed">
+                <div class="modalTooltip">
+                    <lightning:helptext content="{!$Label.c.Tooltip_Text}" onclick="{!c.showModal}"/>
+                </div>
+                <div class="folderDropdown">
+                    <lightning:select aura:id="folderSelect" name="selectFolder" label="{!$Label.c.Select_Folder_Label}" onchange="{!c.changedFolder}" value="{!v.selectedFolder}">                    
+                        <aura:if isTrue="{!v.foldersEnforced}">
+                            <option value="none" text="{!$Label.c.Select_Folder_Value}"></option>
+                            <aura:set attribute="else">
+                                <option value="" text="{!$Label.c.No_Folder_Selected}"></option>
+                            </aura:set>
+                        </aura:if>
+                        <option value="private" text="{!$Label.c.Private_Dashboards}" selected="{!'private' == v.selectedFolder}"></option>
+                        <option value="createdByMe" text="{!$Label.c.Created_by_Me}"></option>
+                        <aura:iteration items="{!v.folders}" var="folder">
+                            <option value="{!folder.Id}" text="{!folder.Name}" selected="{!folder.Id == v.selectedFolder}"></option>
+                        </aura:iteration>
+                    </lightning:select>
+                </div>
+                <div class="dashboardDropdown">
+                    <lightning:select aura:id="dashboardSelect" name="selectDashboard" label="{!$Label.c.Select_Dashboard_Label}" onchange="{!c.changedDashboard}" value="{!v.selectedDashboard}">                    
+                        <aura:if isTrue="{!v.dashboards.length>0}">
+                            <option value="none" text="{!$Label.c.Select_Dashboard_Value}"></option>
+                            <aura:set attribute="else">
+                                <option value="" text="{!$Label.c.No_Dashboards_Found}"></option>
+                            </aura:set>
+                        </aura:if>
+                        <aura:iteration items="{!v.dashboards}" var="dash">
+                            <option value="{!dash.Id}" text="{!dash.Title}" selected="{!dash.Id == v.selectedDashboard}"></option>
+                        </aura:iteration>
+                    </lightning:select>
+                </div>
+                <div class="filter">
+                    <lightning:buttonIconStateful iconName="utility:filter" selected="{!v.atoz}" onclick="{! c.reorderList }" alternativeText="Order" />
+                </div>
+            </div>
+        </div>
+        
+        <aura:if isTrue="{! !empty(v.dashboardId)}">
+            <iframe class="dashboardFrame" id="ifrm" name="sfxdash-userSelect" title="dashboard" src="{!'' + v.communityPrefix + '/desktopDashboards/dashboardApp.app?dashboardId=' + v.dashboardId + '&amp;displayMode=readonly&amp;networkId=000000000000000&amp;' + if(!empty(v.communityPrefix), '', 'context=embedded&amp;' ) + 'userId=' + v.userId }" width="100%" onload="{!c.resizeFrame}"></iframe>
+            <aura:set attribute="else">
+                <div class="spinner">
+                    <lightning:spinner alternativeText="Loading" size="large" />
+                    <center>
+                        <div class="slds-text-heading_small">{!$Label.c.No_Query_Results}</div>
+                    </center>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+    
+    
+</aura:component>

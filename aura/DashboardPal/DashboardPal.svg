@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36px" height="36px" viewBox="0 0 36 36" version="1.1">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs/>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-29.000000, -30.000000)">
+            <g id="Group" transform="translate(29.000000, 30.000000)">
+                <rect id="Rectangle" fill="#EF6E64" x="0" y="0" width="36" height="36" rx="4"/>
+                <g id="dashboard" transform="translate(6.000000, 6.000000)" fill-rule="nonzero" fill="#FFFFFF">
+                    <path d="M12,0 C5.4,0 0,5.4 0,12 C0,18.6 5.4,24 12,24 C18.6,24 24,18.6 24,12 C24,5.4 18.6,0 12,0 Z M12,3.2 C16.84,3.2 20.8,7.16 20.8,12 C20.8,12.4 20.76,12.8 20.72,13.2 L17.16,13.2 C16.76,13.2 16.44,13.48 16.36,13.88 C16.04,15.96 14.2,17.6 12,17.6 C9.8,17.6 7.96,15.96 7.64,13.88 C7.6,13.48 7.24,13.2 6.84,13.2 L3.28,13.2 C3.24,12.8 3.2,12.4 3.2,12 C3.2,7.16 7.16,3.2 12,3.2 Z M11.08,14.96 C12.04,15.48 13.28,15.08 13.8,14.12 C14.56,12.72 16,6.56 15.64,6.4 C15.28,6.2 11,10.84 10.28,12.28 C9.72,13.24 10.08,14.44 11.08,14.96 L11.08,14.96 Z" id="Shape"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
